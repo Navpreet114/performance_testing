@@ -3,7 +3,10 @@ const app = express();
 const PORT = 3000;
 
 app.get('/api/load-testing', (req, res) => {
-    res.json({message: `Request processed: ${req.body}`});
+    const delay = 2000;
+    setTimeout(() => {
+        res.json({message: `Request processed: ${req.body}`});
+    }, delay);
 });
 
 app.listen(PORT, () => {
